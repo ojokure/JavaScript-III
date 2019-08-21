@@ -38,10 +38,22 @@ console.log (food.speak(this));
 function Mystuff(){
     this.name = 'soap';
 }
-let myThings = new Mystuff (name);
+let toiletries = new Mystuff ();
 
-console.log(myThings.name);
+console.log(toiletries.name);
 
 // Principle 4
 
 // code example for Explicit Binding
+
+function itsOladimeji(name, age){
+
+    return `Hi, my name is ${name}, and i am ${age} years old`
+}
+
+itsOladimeji.call('itsDurotolu', 'duro', 29);
+itsOladimeji.apply('itsDurotolu', ['duro', 29]);
+var copyOfOladimeji = itsOladimeji.bind('itsDurotolu');
+
+console.log (itsOladimeji('duro',29));
+console.log(copyOfOladimeji('duro', 29));
