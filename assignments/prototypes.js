@@ -93,10 +93,8 @@ Car.prototype.crashed = function (){
 Car.prototype.repair = function (){
   this.hasCarCrashed = false;
 }
-// if (this.odometer = 1000){
-//       return `I crashed at ${this.odometer}`
-//   }
 
+const Vehicle = new Car ();
 
 //   TASK 3
 
@@ -105,12 +103,68 @@ Car.prototype.repair = function (){
 //   - Babies should have the ability to play, which persons don't.
 //   - By playing, a string is returned with some text of your choosing.
 
+
+function Person (name, age){
+  this.name = name;
+  this.age = age;
+  this.greet = function(){
+    
+    return `Hi, my name is ${this.name} , and i am ${this.age}`
+  }
+}
+function Child(name, age, playAlot) {
+  Person.call(Person, name, age);
+  this.playAlot = function(playAlot){
+
+    return `I like to play ${this.playAlot}`
+   
+  };
+}
+Child.prototype = Object.create(Person.prototype);
+let thomas = new Child('Tom', 5, 'football');
+
 //   TASK 4
 
 //   Use your imagination and come up with constructors that allow to build objects
 //   With amazing and original capabilities. Build 3 small ones, or a very
 //   complicated one with lots of state. Surprise us!
 
+function Dogs (name, breed, color){
+  this.name = name;
+  this.breed = breed;
+  this.color = color;
+  this.dogsCard = function(dogsCard){
+    return `${this.name} is a ${this.color} ${this.breed}`
+  }
+}
+
+const jackie = new Dogs ("jackie", "german-shepherd", "brown");
+const bingo = new Dogs ("bingo","pitbull", "black");
+console.log(jackie);
+console.log(jackie.dogsCard());
+console.log(bingo.dogsCard());
+
+
+
+function Nee (firstName, lastName){
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Nee.prototype.getFullName = function(firstName,lastName){
+   return `${this.firstName} ${this.lastName}`;
+}
+const mary = new Nee('Mary','poppins');
+
+Nee.prototype.getMaritalName = function(newLastName){
+  this.lastName = newLastName;
+}
+
+console.log(mary.getFullName());
+
+mary.getMaritalName('Drinkswater');
+
+console.log(mary.getMaritalName('Drinkswater'));
 // */
 
 // /*

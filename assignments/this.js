@@ -1,10 +1,10 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. window/global object binding 
-* 2. new binding 
-* 3. implicit binding 
-* 4. explicit binding
+* 1. window/global object binding - when "this" keyword is used outside of a function scope.
+* 2. new binding - when "this" keyword is used to instantiate a new object.
+* 3. implicit binding - when "this" keyword is used implicitly(as the name implies) within a function scope level.
+* 4. explicit binding - Using 'call' and 'apply' method to explicitly call constructor objects.
 *
 * write out a code example of each explanation above
 */
@@ -14,7 +14,7 @@
 // code example for Window Binding
 let myOuterVariable = 21;
 
-console.log(myOuterVariable);
+console.log(this);
 
 // Principle 2
 
