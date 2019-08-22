@@ -49,16 +49,20 @@
 function Person (name, age){
   this.name = name;
   this.age = age;
-  this.greet = function(){
-    return `Hi, my name is ${this.name} , and i am ${this.age}`
-  }
+ 
   this.stomach = []
+  }
+
+  Person.prototype.greet = function(){
+    return `Hi, my name is ${this.name} , and i am ${this.age}`
   }
   Person.prototype.eatingEdibles = function(fruits){
     this.stomach.push(fruits);
     }
   Person.prototype.poop = function(){
-    this.stomach = []
+
+  if (this.stomach.length > 0){
+    this.stomach = [] };
   }
 //   TASK 2
 

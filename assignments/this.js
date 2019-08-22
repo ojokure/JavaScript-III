@@ -27,7 +27,7 @@ let food = {
         return `this ${this.name} is sooweet`; 
     },
 }
-console.log (food.speak(this));
+console.log (food.speak());
 
 
 
