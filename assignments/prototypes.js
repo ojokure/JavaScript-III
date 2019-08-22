@@ -118,13 +118,15 @@ const Vehicle = new Car();
 function Person(name, age) {
   this.name = name;
   this.age = age;
-  this.greet = function () {
+}
 
-    return `Hi, my name is ${this.name} , and i am ${this.age}`
-  }
+
+Person.prototype.greet = function () {
+
+  return `Hi, my name is ${this.name} , and i am ${this.age}`
 }
 function Child(name, age, playAlot) {
-  Person.call(Person, name, age);
+  Person.call(this, name, age);
   this.playAlot = function (playAlot) {
 
     return `I like to play ${this.playAlot}`
