@@ -46,24 +46,27 @@
 //   // - Give persons the ability to poop.
 //   // - When pooping, the stomach should empty.
 
-function Person (name, age){
+function Person(name, age) {
   this.name = name;
   this.age = age;
- 
+
   this.stomach = []
-  }
+}
 
-  Person.prototype.greet = function(){
-    return `Hi, my name is ${this.name} , and i am ${this.age}`
-  }
-  Person.prototype.eatingEdibles = function(fruits){
-    this.stomach.push(fruits);
-    }
-  Person.prototype.poop = function(){
+Person.prototype.greet = function () {
+  return `Hi, my name is ${this.name} , and i am ${this.age}`
+}
+Person.prototype.eatingEdibles = function (fruits) {
+  this.stomach.push(fruits);
+}
+Person.prototype.poop = function () {
 
-  if (this.stomach.length > 0){
-    this.stomach = [] };
-  }
+  if (this.stomach.length > 0) {
+
+    this.stomach = []
+  };
+
+}
 //   TASK 2
 
 //   - Build a Car constructor that takes model name and make.
@@ -74,31 +77,35 @@ function Person (name, age){
 //   - Give cars the ability to be repaired.
 //   - A repaired car can be driven again.
 
-  function Car(name, make){
-   this.name = name;
-   this.make = make;
-   this.odometer = 0;
-   this.hasCarCrashed = false;
-  }
-
-Car.prototype.drive = function (miles){
-
-  this.odometer += miles;
-if (this.hasCarCrashed === true){
-
-  return `I crashed at ${this.odometer}`}
-
-else { this.odometer += miles
-  }
-}
-Car.prototype.crashed = function (){
-  this.hasCarCrashed = true;
-}
-Car.prototype.repair = function (){
+function Car(name, make) {
+  this.name = name;
+  this.make = make;
+  this.odometer = 0;
   this.hasCarCrashed = false;
 }
 
-const Vehicle = new Car ();
+Car.prototype.drive = function (miles) {
+
+
+  if (this.hasCarCrashed === true) {
+
+    return `I crashed at ${this.odometer}`
+  }
+  this.odometer += miles;
+
+}
+Car.prototype.crashed = function () {
+  this.hasCarCrashed = true;
+}
+Car.prototype.repair = function () {
+  if (this.hasCarCrashed === true) {
+
+    this.hasCarCrashed = false
+
+  }
+}
+
+const Vehicle = new Car();
 
 //   TASK 3
 
@@ -108,20 +115,20 @@ const Vehicle = new Car ();
 //   - By playing, a string is returned with some text of your choosing.
 
 
-function Person (name, age){
+function Person(name, age) {
   this.name = name;
   this.age = age;
-  this.greet = function(){
-    
+  this.greet = function () {
+
     return `Hi, my name is ${this.name} , and i am ${this.age}`
   }
 }
 function Child(name, age, playAlot) {
   Person.call(Person, name, age);
-  this.playAlot = function(playAlot){
+  this.playAlot = function (playAlot) {
 
     return `I like to play ${this.playAlot}`
-   
+
   };
 }
 Child.prototype = Object.create(Person.prototype);
@@ -133,34 +140,34 @@ let thomas = new Child('Tom', 5, 'football');
 //   With amazing and original capabilities. Build 3 small ones, or a very
 //   complicated one with lots of state. Surprise us!
 
-function Dogs (name, breed, color){
+function Dogs(name, breed, color) {
   this.name = name;
   this.breed = breed;
   this.color = color;
-  this.dogsCard = function(dogsCard){
+  this.dogsCard = function (dogsCard) {
     return `${this.name} is a ${this.color} ${this.breed}`
   }
 }
 
-const jackie = new Dogs ("jackie", "german-shepherd", "brown");
-const bingo = new Dogs ("bingo","pitbull", "black");
+const jackie = new Dogs("jackie", "german-shepherd", "brown");
+const bingo = new Dogs("bingo", "pitbull", "black");
 console.log(jackie);
 console.log(jackie.dogsCard());
 console.log(bingo.dogsCard());
 
 
 
-function Nee (firstName, lastName){
+function Nee(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
 }
 
-Nee.prototype.getFullName = function(firstName,lastName){
-   return `${this.firstName} ${this.lastName}`;
+Nee.prototype.getFullName = function (firstName, lastName) {
+  return `${this.firstName} ${this.lastName}`;
 }
-const mary = new Nee('Mary','poppins');
+const mary = new Nee('Mary', 'poppins');
 
-Nee.prototype.getMaritalName = function(newLastName){
+Nee.prototype.getMaritalName = function (newLastName) {
   this.lastName = newLastName;
 }
 
